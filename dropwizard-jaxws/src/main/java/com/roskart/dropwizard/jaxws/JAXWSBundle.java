@@ -1,12 +1,13 @@
 package com.roskart.dropwizard.jaxws;
 
-import io.dropwizard.ConfiguredBundle;
-import io.dropwizard.setup.Bootstrap;
-import io.dropwizard.setup.Environment;
+
+import io.dropwizard.core.ConfiguredBundle;
+import io.dropwizard.core.setup.Bootstrap;
+import io.dropwizard.core.setup.Environment;
 import org.hibernate.SessionFactory;
 
-import javax.xml.ws.Endpoint;
-import javax.xml.ws.handler.Handler;
+import jakarta.xml.ws.Endpoint;
+import jakarta.xml.ws.handler.Handler;
 
 import static com.google.common.base.Preconditions.checkArgument;
 
@@ -78,7 +79,7 @@ public class JAXWSBundle<C> implements ConfiguredBundle<C> {
     /**
      * Publish JAX-WS endpoint. Endpoint will be published relative to the CXF servlet path.
      * @param endpointBuilder EndpointBuilder.
-     * @return javax.xml.ws.Endpoint
+     * @return jakarta.xml.ws.Endpoint
      */
      public Endpoint publishEndpoint(EndpointBuilder endpointBuilder) {
         checkArgument(endpointBuilder != null, "EndpointBuilder is null");
@@ -89,7 +90,7 @@ public class JAXWSBundle<C> implements ConfiguredBundle<C> {
      * Publish JAX-WS endpoint. Endpoint is published relative to the CXF servlet path.
      * @param path Relative endpoint path.
      * @param service Service implementation.
-     * @return javax.xml.ws.Endpoint
+     * @return jakarta.xml.ws.Endpoint
      *
      * @deprecated Use the {@link #publishEndpoint(EndpointBuilder)} publishEndpoint} method instead.
      */
@@ -103,7 +104,7 @@ public class JAXWSBundle<C> implements ConfiguredBundle<C> {
      * @param path Relative endpoint path.
      * @param service Service implementation.
      * @param sessionFactory Hibernate session factory.
-     * @return javax.xml.ws.Endpoint
+     * @return jakarta.xml.ws.Endpoint
      *
      * @deprecated Use the {@link #publishEndpoint(EndpointBuilder)} publishEndpoint} method instead.
      */
@@ -117,7 +118,7 @@ public class JAXWSBundle<C> implements ConfiguredBundle<C> {
      * @param path Relative endpoint path.
      * @param service Service implementation.
      * @param authentication BasicAuthentication implementation.
-     * @return javax.xml.ws.Endpoint
+     * @return jakarta.xml.ws.Endpoint
      *
      * @deprecated Use the {@link #publishEndpoint(EndpointBuilder)} publishEndpoint} method instead.
      */
@@ -133,7 +134,7 @@ public class JAXWSBundle<C> implements ConfiguredBundle<C> {
      * @param service Service implementation.
      * @param auth BasicAuthentication implementation.
      * @param sessionFactory Hibernate session factory.
-     * @return javax.xml.ws.Endpoint
+     * @return jakarta.xml.ws.Endpoint
      *
      * @deprecated Use the {@link #publishEndpoint(EndpointBuilder)} publishEndpoint} method instead.
      */
